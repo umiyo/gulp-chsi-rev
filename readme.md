@@ -85,6 +85,8 @@ body{background:url("../images/bg.png?v=1482737522923")}
 ```
 
 ## 更新日志
+- v.1.2.1 使用安全的 `Buffer.alloc` 代替 `new Buffer`。
+
 - v.1.2.0 主要用来处理生成的css文件，原jsp改为动态生成，排除了一些CDN选项；精简了代码，修正了正则判断，修复了在css中`input[type="button"]::-moz-focus-inner` 错加版本号的问题。
 
 - v1.1.1 添加注释
