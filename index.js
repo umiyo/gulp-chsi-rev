@@ -90,7 +90,8 @@ module.exports = function (options) {
             }
         }
 
-        file.contents = new Buffer(content);
+        // 鉴于安全性，不再使用 new Buffer(content)
+        file.contents = Buffer.alloc(content);
         this.push(file);
         cb();
     });
