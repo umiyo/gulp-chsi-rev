@@ -31,6 +31,8 @@ var ASSET_REG = {
 var createHash = function (file, len) {
     return crypto.createHash('md5').update(file).digest('hex').substr(0, len);
 };
+
+
 //获取当前时间
 var getDate = new Date().getTime();
 console.log('当前时间戳为：'+getDate);
@@ -91,7 +93,7 @@ module.exports = function (options) {
         }
 
         // 鉴于安全性，不再使用 new Buffer(content)
-        file.contents = Buffer.alloc(content);
+        file.contents = Buffer.from(content);
         this.push(file);
         cb();
     });
