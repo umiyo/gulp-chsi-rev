@@ -66,7 +66,9 @@ module.exports = function (options) {
                     }
 
                     // 排除.js，.html 静态资源（根据公司cdn设置规则）
-                    if(/.+\.(js|html)$/g.test(src)){
+                    // if(/.+\.(js|html)$/g.test(src)){
+                    // 排除.html，但不排除.js，对于cdn上的资源换种方式排除
+                    if(/.+\.(html)$/g.test(src)){
                         return str;
                     }
                     // 排除cdn的common目录下的静态资源
